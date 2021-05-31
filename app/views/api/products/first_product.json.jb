@@ -1,3 +1,6 @@
 {
-  
+  id: @first.id,
+  name: @first.name,
+  price: @first.price,
+  description: @first.description,
 }
