@@ -5,3 +5,4 @@ Rails.application.routes.draw do
     get "/products" => "products#any_products_action"
   end
 end
+ 
