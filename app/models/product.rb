@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :description, length: { in: 2..500 }
     
   scope :title_search, -> (search_terms) {where("name ILIKE ?", "%#{search_terms}%") if search_terms}
-  scope :discounted, -> (check_discount) {where("price < ?",10) if check_discount}
+  scope :discounted, -> (check_discount) {where("price <= ?",100) if check_discount}
   scope :sorted, -> (sort, sort_order) {
     if sort == "price" && sort_order == "asc"
       order(price: :asc)
@@ -14,10 +14,15 @@ class Product < ApplicationRecord
       order(id: :asc)
     end
   }
-  
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
+  has_many :images
+  # def images 
+  #   Image.where(product_id: id)
+  # end
+
+  belongs_to :supplier
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
@@ -28,7 +33,7 @@ class Product < ApplicationRecord
   end
 
   def is_discounted?
-    price <= 10
+    price <= 100
   end
 
   def tax
