@@ -12,6 +12,7 @@ class Api::OrdersController < ApplicationController
       subtotal: calculated_subtotal,
       tax: calculated_tax,
       total: calculated_total,
+      
     )
     if @order.save
       render "show.json.jb"
@@ -19,4 +20,17 @@ class Api::OrdersController < ApplicationController
       render json: {error: @order.errors.full_messages}
     end
   end
+
+  def index
+    # @orders = Order.where(user_id: current_user.id)
+    #or use
+    @orders = current_user.orders
+    render "index.json.jb"
+  end
+
+  def show
+    @order = current_user.orders.find_by(id: params[:id])
+    render "show.json.jb"
+  end
+
 end 
