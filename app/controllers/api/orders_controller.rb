@@ -1,6 +1,7 @@
 class Api::OrdersController < ApplicationController
   #call this method in from Application controller before rest of code
   before_action :authenticate_user
+  
   def create
     product = Product.find_by(id: params[:product_id])
     calculated_subtotal = product.price * params[:quantity].to_i
