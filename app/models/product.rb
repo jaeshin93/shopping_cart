@@ -18,16 +18,10 @@ class Product < ApplicationRecord
   has_many :category_products
   has_many :categories, through: :category_products
   has_many :images
-  # def images 
-  #   Image.where(product_id: id)
-  # end
-
-  has_many :orders
+  has_many :carted_products
+  has_many :orders, through: :carted_products
 
   belongs_to :supplier
-  # def supplier
-  #   Supplier.find_by(id: supplier_id)
-  # end
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
