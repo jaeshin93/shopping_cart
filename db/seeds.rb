@@ -10,13 +10,13 @@ Supplier.create!(name: "BBTZ", email: "bbtz@example.com", phone_number: 84757892
 Supplier.create!(name: "Rogue Fitness", email: "rogue@example.com", phone_number: 3126789843)
 Supplier.create!(name: "Rolex", email: "rolex@example.com", phone_number: 3021231289)
 
-Product.create!({item_count: 100 ,supplier_id: 2, name: "Skateboard", price: 100, description: "All the cool kids do it."})
+Product.create!({item_count: 100 ,supplier_id: 2, name: "Skateboard", price: 100, description: "Skateboarding is an extreme sport that can be very challenging but is equally rewarding."})
 Product.create!({item_count: 100 ,supplier_id: 1, name: "Bicycle", price: 500, description: "Ride around town like a boss."})
 Product.create!({item_count: 100 ,supplier_id: 1, name: "Computer", price: 1000, description: "Play all the games you can imagine."})
-Product.create!({item_count: 100 ,supplier_id: 3, name: "Dumbbells", price: 25, description: "Get swole or die."})
+Product.create!({item_count: 100 ,supplier_id: 3, name: "Dumbbells", price: 25, description: "Best way to stay active and maintain good health. Lifting weights can be the answer to everything you ever wanted."})
 Product.create!({item_count: 100 ,supplier_id: 1, name: "Headphones", price: 300, description: "Probably the best audio you'll ever hear."})
 Product.create!({item_count: 100 ,supplier_id: 1, name: "Camera", price: 1500, description: "Capture all the precious moments in life."})
-Product.create!({item_count: 100 ,supplier_id: 4, name: "Rolex", price: 10000, description: "You wish you can afford this."})
+Product.create!({item_count: 100 ,supplier_id: 4, name: "Rolex", price: 10000, description: "The highly-coveted piece of jewerly for decades."})
 
 Image.create!({product_id: 1, url: "https://images-na.ssl-images-amazon.com/images/I/81PrBQo%2BjmL._AC_SX425_.jpg"})
 Image.create!({product_id: 1, url: "https://i.guim.co.uk/img/media/421225c947412ee47df755fec0d8c1960b56a3cd/0_0_5399_3241/master/5399.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=cacdfb478eef699428e6bf57028928b1" })  
